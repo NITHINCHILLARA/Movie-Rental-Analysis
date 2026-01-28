@@ -1,0 +1,31 @@
+In ACTOR TABLE : 
+
+1)
+FilmPopularity = SUMX('film',COUNT(film[rental_rate]))
+
+
+
+IN CUSTOMER TABLE (CREATE NEW COLUMN) : 
+
+2)
+Employment Duration = DATEDIFF('customer'[create_date], TODAY(), YEAR)
+
+
+
+IN INVENTORY TABLE :
+
+3)
+Average Inventory Value = AVERAGE('film'[rental_rate])
+
+4)
+Total Films Rented = COUNTROWS('inventory')
+
+5)
+Inventory Turnover Rate = [Total Films Rented] / [Average Inventory Value]
+
+
+IN PAYMENT TABLE : 
+
+6)
+Revenue = SUM(payment[amount])
+
